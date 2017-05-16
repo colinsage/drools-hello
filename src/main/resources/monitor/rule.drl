@@ -1,0 +1,15 @@
+import com.colinsage.drools.ConditionedDataPoint;
+
+rule "WARN"
+    when
+        dp : ConditionedDataPoint( value >= WARN && value < CRITICAL , myMetric : metric )
+    then
+        System.out.println( myMetric + " is WARN" );
+end
+
+rule "CRITICAL"
+    when
+        dp : ConditionedDataPoint( value > CRITICAL , myMetric : metric )
+    then
+        System.out.println( myMetric + " is CRITICAL"  );
+end

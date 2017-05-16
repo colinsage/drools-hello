@@ -1,0 +1,9 @@
+package com.colinsage.drools
+
+import com.colinsage.drools.Message;
+
+rule "Test KieFileSystem"
+    when
+    then
+        System.out.println( "hello, KieFileSystem" );
+end
